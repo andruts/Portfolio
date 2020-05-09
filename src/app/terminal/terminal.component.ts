@@ -85,7 +85,7 @@ export class TerminalComponent implements OnInit {
     'Bienvenido a mi Interfaz de línea de comandos.',
     
     {
-      "input": "acercade",
+      "input": "about",
       "output": [
         "Hola 👋",
         "Soy Andrés Castellanos. Un desarrollador web de México.",
@@ -93,7 +93,7 @@ export class TerminalComponent implements OnInit {
         "Tengo una licenciatura en Ingeniería de Software y un perro al que llamo Zac."]
     },
     {
-      "input": "experiencia",
+      "input": "experience",
       "output": [
         "6 meses trabajando de medio tiempo como desarrollador Android y como diseñador UX/UI",
         "8 meses trabajando de medio tiempo como desarrollador Salesforce",
@@ -101,7 +101,7 @@ export class TerminalComponent implements OnInit {
         "3 meses trabajando como desarrollador de bases de datos usando TypeORM + Express + postgreSQL"]
     },
     {
-      "input": "lenguajesdeprogramacion",
+      "input": "programming languages",
       "output": [
         "JavaScript",
         "Java",
@@ -116,21 +116,21 @@ export class TerminalComponent implements OnInit {
       ]
     },
     {
-      "input": "idiomas",
+      "input": "languages",
       "output": [
         "Nivel B2 en Inglés",
         "Español como idioma nativo"
       ]
     },
     {
-      "input": "educacion",
+      "input": "education",
       "output": [
         "Licenciatura en Ingeniería de Software con especialidad en desarrollo Front-End y diseño UX/UI.",
         "Otorgado por la Facultad de Matemáticas de la Universidad Autónoma de Yucatán"
       ]
     },
     {
-      "input": "tecnologias",
+      "input": "technologies",
       "output": [
         "Laravel",
         "Eloquent",
