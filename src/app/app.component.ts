@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     dense = false;
     nextLocale: string = '';
     languages: Record<string, string> = {
-      'es' : 'en-US',
+      'es' : '',
       'en' : 'es'
     }
 
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {  
       
-      this.nextLocale = this.languages[this.locale.split('-')[0]];
+      this.nextLocale = `/Portfolio/${this.languages[this.locale.split('-')[0]]}`;
       
     }
     constructor(@Inject(LOCALE_ID) public locale: string) { }

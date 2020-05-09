@@ -101,7 +101,7 @@ export class TerminalComponent implements OnInit {
         "3 meses trabajando como desarrollador de bases de datos usando TypeORM + Express + postgreSQL"]
     },
     {
-      "input": "lenguagesdeprogramacion",
+      "input": "lenguajesdeprogramacion",
       "output": [
         "JavaScript",
         "Java",
