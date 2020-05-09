@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 // customize some theme variables, e.g.:
-$mdc-theme-primary: #0E0805;
-$mdc-theme-secondary: #8F4E3B;
-$mdc-theme-background: #CFDDD9;
+$mdc-theme-primary: #292929;
+$mdc-theme-secondary: #292929;
+$mdc-theme-background: #F1F1F1;
 
 // import theming for all mdc components:
 @import "material-components-web/material-components-web";
 
 html, body {
     margin: 0;
+    height: 100%;
 }

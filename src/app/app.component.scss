@@ -1,29 +1,41 @@
-@import "~@material/theme/mixins";
+:root {
+  height: 100%;
+}
 
-// Place drawer and content side by side:
+a {
+  text-decoration: none;
+}
+
 .blox-snippet-page {
-    display: flex;
-    flex-direction: row;
-    height: 400px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
-.mdc-drawer--temporary {
-    // the default position is fixed, but in this demo we want to position the drawer
-    // inside its parent, not fixed to the viewport:
-    position: absolute;
+#profileImg {
+  border-radius: 100%;
+  height: 100%;
+  width: 50%;
+
 }
 
-[mdcDrawerHeader], [mdcDrawerToolbarSpacer] {
-    // color the header variants the same way as the toolbar:
-    @include mdc-theme-prop(background-color, primary);
-    @include mdc-theme-prop(color, on-primary);
+.profileContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
-// Stack toolbar and main on top of each other:
-.blox-demo-content {
-    box-sizing: border-box;
-    display: inline-flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
+.socialLinks {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px;
+}
+
+.social {
+  margin: 8px;
 }

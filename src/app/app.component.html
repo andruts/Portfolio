@@ -1,46 +1,66 @@
-<div #viewport class="blox-snippet-page">
+<div class="blox-snippet-page">
   <aside [mdcDrawerContainer]="drawerType" [(open)]="open">
     <nav mdcDrawer>
       <div mdcDrawerToolbarSpacer *ngIf="toolbarSpacer"></div>
       <div mdcDrawerHeader *ngIf="toolbarHeader">
-        <div mdcDrawerHeaderContent>Header Content</div>
+        <div mdcDrawerHeaderContent>
+          <div class="profileContainer">
+            <img src="assets/images/profile-picture.jpg" id="profileImg">
+          </div>
+        </div>
+
       </div>
       <div mdcDrawerContent mdcListGroup>
+        <div class="socialLinks">
+          <div class="social">
+            <a mdcFab [exited]="false" href="https://twitter.com/Andres_Cst" target="_blank" title="Follow me on Twitter"><span mdcFabIcon class="fab material-icons">
+                <i class="fab fa-twitter"></i>
+              </span></a>
+              
+          </div>
+          <div class="social">
+            <a mdcFab [exited]="false" href="https://www.linkedin.com/in/castellanosandres" target="_blank" title="Connect with me at LinkedIn"><span mdcFabIcon class="fab material-icons">
+                <i class="fab fa-linkedin-in"></i>
+              </span></a>
+          </div>
+          <div class="social">
+            <a mdcFab [exited]="false" href="https://github.com/andruts" target="_blank" title="Have a look to my work"><span mdcFabIcon class="fab material-icons">
+                <i class="fab fa-github"></i>
+              </span></a>
+          </div>
+        </div>
         <nav mdcList>
-          <a mdcListItem href="javascript:void(0)">
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">inbox</i>Inbox
+          <a href="mailto:acastellanosalcocer@gmail.com" mdcListItem title="Let's talk!">
+            <i mdcListItemGraphic class="fas fa-at material-icons">
+            </i>
+            Contact me
           </a>
-          <a mdcListItem href="javascript:void(0)">
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">send</i>Sent Mail
-          </a>
-          <a mdcListItem href="javascript:void(0)">
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>Drafts
+          <a href="https://github.com/andruts/Portfolio" target="_blank" mdcListItem title="See for yourself">
+            <i mdcListItemGraphic class="fas fa-code material-icons">
+            </i>
+            Check out source code
           </a>
         </nav>
-        <hr mdcListDivider>
-        <nav mdcList>
-          <a mdcListItem href="javascript:void(0)">
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">email</i>All Mail
-          </a>
-          <a mdcListItem href="javascript:void(0)">
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">delete</i>Trash
-          </a>
-        </nav>
+
       </div>
     </nav>
   </aside>
-  <div class="blox-demo-content">
-    <header mdcTopAppBar [viewport]="viewport" [fixedAdjust]="content">
+
+  <div #viewport class="blox-snippet-page">
+    <header [mdcTopAppBar]="type" [viewport]="viewport" [fixedAdjust]="fixedAdjust" [prominent]="prominent"
+      [dense]="dense">
       <div mdcTopAppBarRow>
         <section mdcTopAppBarSection alignStart>
-          <button mdcTopAppBarNavIcon class="material-icons" (click)="toggleDrawer()">menu</button>
-          <span mdcTopAppBarTitle></span>
+          <a href="javascript:void(0)" mdcTopAppBarNavIcon (click)="toggleDrawer()"
+            class="material-icons">account_circle</a>
+          <span mdcTopAppBarTitle>Andres Castellanos</span>
+        </section>
+        <section mdcTopAppBarSection alignEnd>
+          <a href="assets/acastellanos_cv.pdf" target="_blank" mdcTopAppBarAction class="material-icons" label="Download">picture_as_pdf</a>
         </section>
       </div>
     </header>
-
-    <main #content class="blox-demo-main">
+    <main #fixedAdjust>
       <app-terminal></app-terminal>
     </main>
   </div>
-</div>
