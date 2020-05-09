@@ -10,7 +10,8 @@ import Typed from 'typed.js';
 export class TerminalComponent implements OnInit {
 
   private commands: Array<String | Object> = [
-    'Welcome to Andres Portfolio.',
+    'Welcome to my CLI.',
+    
     {
       "input": "about",
       "output": [
@@ -87,7 +88,7 @@ export class TerminalComponent implements OnInit {
     const shell = new Shell("#shell", {
       user: 'guest',
       host: 'andruts',
-      path: '/Portfolio/',
+      path: 'Portfolio',
       style: 'macos',
       theme: 'dark',
       responsive: true,
