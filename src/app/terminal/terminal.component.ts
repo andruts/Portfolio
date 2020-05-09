@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import Shell from "shell.js"
 import Typed from 'typed.js';
 
@@ -8,8 +8,8 @@ import Typed from 'typed.js';
   styleUrls: ['./terminal.component.scss']
 })
 export class TerminalComponent implements OnInit {
-
-  private commands: Array<String | Object> = [
+    
+  private englishCommands: Array<String | Object> = [
     'Welcome to my CLI.',
     
     {
@@ -79,12 +79,97 @@ export class TerminalComponent implements OnInit {
         "postgreSQL"
       ]
     }
+  ];
+
+  private spanishCommands: Array<String | Object> = [
+    'Bienvenido a mi Interfaz de línea de comandos.',
+    
+    {
+      "input": "acercade",
+      "output": [
+        "Hola 👋",
+        "Soy Andrés Castellanos. Un desarrollador web de México.",
+        "Me gusta probar diferentes tecnologías. Me gusta el sentimiento que viene despues de hacer las cosas funcionar.",
+        "Tengo una licenciatura en Ingeniería de Software y un perro al que llamo Zac."]
+    },
+    {
+      "input": "experiencia",
+      "output": [
+        "6 meses trabajando de medio tiempo como desarrollador Android y como diseñador UX/UI",
+        "8 meses trabajando de medio tiempo como desarrollador Salesforce",
+        "6 meses fui interno en Nearsoft",
+        "3 meses trabajando como desarrollador de bases de datos usando TypeORM + Express + postgreSQL"]
+    },
+    {
+      "input": "lenguagesdeprogramacion",
+      "output": [
+        "JavaScript",
+        "Java",
+        "Python",
+        "TypeScript",
+        "VisualForce",
+        "APEX",
+        "SQL",
+        "Clojure",
+        "C",
+        "R"
+      ]
+    },
+    {
+      "input": "idiomas",
+      "output": [
+        "Nivel B2 en Inglés",
+        "Español como idioma nativo"
+      ]
+    },
+    {
+      "input": "educacion",
+      "output": [
+        "Licenciatura en Ingeniería de Software con especialidad en desarrollo Front-End y diseño UX/UI.",
+        "Otorgado por la Facultad de Matemáticas de la Universidad Autónoma de Yucatán"
+      ]
+    },
+    {
+      "input": "tecnologias",
+      "output": [
+        "Laravel",
+        "Eloquent",
+        "Angular",
+        "Vue.js",
+        "TypeORM",
+        "Webpack",
+        "Ruby on Rails",
+        "ActiveRecord",
+        "Karma",
+        "TSLint",
+        "Material Components",
+        "Android",
+        "Bootstrap",
+        "jQuery",
+        "Materialize",
+        "MySQL",
+        "postgreSQL"
+      ]
+    }
   ]
 
-  constructor() {
+  constructor(
+    @Inject(LOCALE_ID) public locale: string
+  ) {
   }
 
   ngOnInit(): void {
+    let commands = [];
+    switch (this.locale.split('-')[0]) {
+      case 'en':
+        commands = this.englishCommands;
+        break;
+      case 'es':
+        commands = this.spanishCommands;
+        break;
+      default:
+        break;
+    } 
     const shell = new Shell("#shell", {
       user: 'guest',
       host: 'andruts',
@@ -92,10 +177,12 @@ export class TerminalComponent implements OnInit {
       style: 'macos',
       theme: 'dark',
       responsive: true,
-      commands: this.commands,
+      commands: commands,
       typed: Typed
     });
 
   }
+
+   
 
 }

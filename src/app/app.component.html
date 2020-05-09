@@ -13,40 +13,50 @@
       <div mdcDrawerContent mdcListGroup>
         <div class="socialLinks">
           <div class="social">
-            <a mdcFab [exited]="false" href="https://twitter.com/Andres_Cst" target="_blank" title="Follow me on Twitter"><span mdcFabIcon class="fab material-icons">
+            <a mdcFab [exited]="false" href="https://twitter.com/Andres_Cst" target="_blank"
+            i18n-title title="Follow me on Twitter"><span mdcFabIcon class="fab material-icons">
                 <i class="fab fa-twitter"></i>
               </span></a>
-              
+
           </div>
           <div class="social">
-            <a mdcFab [exited]="false" href="https://www.linkedin.com/in/castellanosandres" target="_blank" title="Connect with me at LinkedIn"><span mdcFabIcon class="fab material-icons">
+            <a mdcFab [exited]="false" href="https://www.linkedin.com/in/castellanosandres" target="_blank"
+            i18n-title title="Connect with me at LinkedIn"><span mdcFabIcon class="fab material-icons">
                 <i class="fab fa-linkedin-in"></i>
               </span></a>
           </div>
           <div class="social">
-            <a mdcFab [exited]="false" href="https://github.com/andruts" target="_blank" title="Have a look to my work"><span mdcFabIcon class="fab material-icons">
+            <a mdcFab [exited]="false" href="https://github.com/andruts" target="_blank"
+            i18n-title title="Have a look to my work"><span mdcFabIcon class="fab material-icons">
                 <i class="fab fa-github"></i>
               </span></a>
           </div>
         </div>
         <nav mdcList>
-          <a href="mailto:acastellanosalcocer@gmail.com" mdcListItem title="Let's talk!">
+          <a href="mailto:acastellanosalcocer@gmail.com" mdcListItem i18n-title title="Let's talk!">
             <i mdcListItemGraphic class="fas fa-at material-icons">
             </i>
-            Email
+            <ng-container i18n>
+              Email
+            </ng-container>
           </a>
-          <a href="https://github.com/andruts/Portfolio" target="_blank" mdcListItem title="See for yourself">
+          <a href="https://github.com/andruts/Portfolio" target="_blank" mdcListItem i18n-title title="See for yourself">
             <i mdcListItemGraphic class="fas fa-code material-icons">
             </i>
-            Source code
+            <ng-container i18n>
+              Source code
+            </ng-container>
+
           </a>
-          <a href="assets/acastellanos_cv.pdf" target="_blank" mdcListItem title="See for yourself">
+          <a href="assets/acastellanos_cv.pdf" target="_blank" mdcListItem i18n-title title="See for yourself">
             <i mdcListItemGraphic class="material-icons">
               picture_as_pdf
             </i>
-            Curriculum Vitae
+            <ng-container i18n>
+              Curriculum Vitae
+            </ng-container>
           </a>
-          
+
         </nav>
 
       </div>
@@ -63,7 +73,7 @@
           <span mdcTopAppBarTitle>Andres Castellanos</span>
         </section>
         <section mdcTopAppBarSection alignEnd>
-          <a mdcTopAppBarAction class="material-icons" title="Change language">language</a>
+          <a mdcTopAppBarAction href="/{{nextLocale}}" class="material-icons" i18n-title title="Change language">language</a>
         </section>
       </div>
     </header>

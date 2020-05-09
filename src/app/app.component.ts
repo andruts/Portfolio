@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, LOCALE_ID } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,11 @@ export class AppComponent implements OnInit {
     type = 'short';
     prominent = false;
     dense = false;
+    nextLocale: string = '';
+    languages: Record<string, string> = {
+      'es' : 'en-US',
+      'en' : 'es'
+    }
 
     toggleDrawer() {
         this.open = !this.open;
@@ -22,7 +27,10 @@ export class AppComponent implements OnInit {
     get toolbarSpacer() { return this.headerType === 'spacer'; }
     get toolbarHeader() { return this.headerType === 'header'; }
 
-    ngOnInit(): void {
+    ngOnInit(): void {  
+      
+      this.nextLocale = this.languages[this.locale.split('-')[0]];
+      
     }
-    constructor() { }
+    constructor(@Inject(LOCALE_ID) public locale: string) { }
 }

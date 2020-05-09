@@ -10,6 +10,11 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "locales": {
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -65,6 +70,8 @@
                   "maximumError": "10kb"
                 }
               ]
+            }, "es": {
+              "localize": ["es"]
             }
           }
         },
@@ -76,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "portfolio:build:production"
+            },
+            "es": {
+              "browserTarget": "portfolio:build:es"
             }
           }
         },
